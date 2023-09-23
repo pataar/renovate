@@ -15,9 +15,8 @@ export async function detectMonorepos(
   // ignore lerna if using v7 or later by deleting all metadata
   for (const p of packageFiles) {
     if (p.managerData?.lernaJsonFile) {
-      const lernaConstraint = p.deps?.find(
-        (dep) => dep.depName === 'lerna'
-      )?.currentValue;
+      const lernaConstraint = p.deps?.find((dep) => dep.depName === 'lerna')
+        ?.currentValue;
       if (
         !lernaConstraint ||
         !semver.validRange(lernaConstraint) ||

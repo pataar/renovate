@@ -63,8 +63,8 @@ describe('modules/manager/npm/extract/post/monorepo', () => {
       await detectMonorepos(packageFiles);
       expect(packageFiles[1].managerData?.lernaJsonFile).toBe('lerna.json');
       expect(
-        packageFiles.some((packageFile) =>
-          packageFile.deps?.some((dep) => dep.isInternal)
+        packageFiles.some(
+          (packageFile) => packageFile.deps?.some((dep) => dep.isInternal)
         )
       ).toBeTrue();
     });
@@ -116,8 +116,8 @@ describe('modules/manager/npm/extract/post/monorepo', () => {
       await detectMonorepos(packageFiles);
       expect(packageFiles[1].managerData?.lernaJsonFile).toBeUndefined();
       expect(
-        packageFiles.some((packageFile) =>
-          packageFile.deps?.some((dep) => dep.isInternal)
+        packageFiles.some(
+          (packageFile) => packageFile.deps?.some((dep) => dep.isInternal)
         )
       ).toBeFalse();
     });
@@ -173,8 +173,8 @@ describe('modules/manager/npm/extract/post/monorepo', () => {
       await detectMonorepos(packageFiles);
       expect(packageFiles[1].managerData?.lernaJsonFile).toBe('lerna.json');
       expect(
-        packageFiles.some((packageFile) =>
-          packageFile.deps?.some((dep) => dep.isInternal)
+        packageFiles.some(
+          (packageFile) => packageFile.deps?.some((dep) => dep.isInternal)
         )
       ).toBeTrue();
     });
